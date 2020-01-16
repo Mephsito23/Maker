@@ -141,8 +141,8 @@ func getPrettierrcTemple() -> String {
 func getHelp() -> String {
     let executableName = (CommandLine.arguments[0] as NSString).lastPathComponent
     return """
-      \(executableName) -y careat .swiftlint.yml
-      \(executableName) -p careat Podfile
+      \(executableName) -y [project] careat .swiftlint.yml
+      \(executableName) -p [project] careat Podfile
       \(executableName) -c careat Cartfile
       \(executableName) -pre careat .prettierrc.js
     """
