@@ -7,23 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		047FCBCC23D044B800259DF2 /* temple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FCBCB23D044B800259DF2 /* temple.swift */; };
+		047FCBE123D050E600259DF2 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FCBE023D050E600259DF2 /* Util.swift */; };
 		42079A7B1EC2330100477ADE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42079A7A1EC2330100477ADE /* main.swift */; };
 		42079A821EC2AA5000477ADE /* Maker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42079A811EC2AA5000477ADE /* Maker.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		42079A751EC2330100477ADE /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
+		047FCBCB23D044B800259DF2 /* temple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = temple.swift; sourceTree = "<group>"; };
+		047FCBE023D050E600259DF2 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		42079A771EC2330100477ADE /* Maker */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Maker; sourceTree = BUILT_PRODUCTS_DIR; };
 		42079A7A1EC2330100477ADE /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		42079A811EC2AA5000477ADE /* Maker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Maker.swift; sourceTree = "<group>"; };
@@ -40,11 +32,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		047FCBCF23D04AEA00259DF2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		42079A6E1EC2330100477ADE = {
 			isa = PBXGroup;
 			children = (
 				42079A791EC2330100477ADE /* Maker */,
 				42079A781EC2330100477ADE /* Products */,
+				047FCBCF23D04AEA00259DF2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,6 +61,8 @@
 			children = (
 				42079A7A1EC2330100477ADE /* main.swift */,
 				42079A811EC2AA5000477ADE /* Maker.swift */,
+				047FCBCB23D044B800259DF2 /* temple.swift */,
+				047FCBE023D050E600259DF2 /* Util.swift */,
 			);
 			path = Maker;
 			sourceTree = "<group>";
@@ -74,7 +76,8 @@
 			buildPhases = (
 				42079A731EC2330100477ADE /* Sources */,
 				42079A741EC2330100477ADE /* Frameworks */,
-				42079A751EC2330100477ADE /* CopyFiles */,
+				047FCBC923D0424800259DF2 /* swiftformat */,
+				047FCBCA23D0427200259DF2 /* swiftLint */,
 			);
 			buildRules = (
 			);
@@ -120,13 +123,54 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		047FCBC923D0424800259DF2 /* swiftformat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = swiftformat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftformat >/dev/null; then\n  swiftformat .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
+		};
+		047FCBCA23D0427200259DF2 /* swiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = swiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		42079A731EC2330100477ADE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				42079A821EC2AA5000477ADE /* Maker.swift in Sources */,
+				047FCBCC23D044B800259DF2 /* temple.swift in Sources */,
 				42079A7B1EC2330100477ADE /* main.swift in Sources */,
+				047FCBE123D050E600259DF2 /* Util.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +271,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 678WD436L9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -236,6 +284,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 678WD436L9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
